@@ -1,0 +1,6 @@
+[en]
+JBE_MENU_NEXT = Далее
+JBE_MENU_BACK = Назад
+JBE_MENU_EXIT = Выход
+JBE_MENU_ENABLE = Включено
+JBE_MENU_DISABLE = Выключено

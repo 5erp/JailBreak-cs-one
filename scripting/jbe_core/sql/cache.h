@@ -1,0 +1,54 @@
+/********************************
+*	Shared Functions Header File
+*********************************/
+
+// Player data
+
+new Array:g_aUsersCache;
+new g_iUserCacheSize;
+new g_iUserCacheID[MAX_PLAYERS + 1];
+
+enum _: DATA_QUEST_CACHE
+{
+	CACHE_QUEST_EXEC [MAX_EXECUTE_QUEST],
+	CACHE_QUEST_NUM [MAX_EXECUTE_QUEST],
+	CACHE_QUEST_END [MAX_EXECUTE_QUEST]
+};
+
+enum _: DATA_USER_CACHE
+{
+	UC_NAME[MAX_NAME_LENGTH],
+	UC_AUTHID[MAX_AUTHID_LENGTH],
+	UC_IP[MAX_USERIP_LENGTH],
+	UC_PASS[MAX_PASS_LENGTH],
+	UC_SQL_ID,
+	UC_EXP,
+	UC_LEVEL,
+	UC_MONEY,
+	UC_BRACELETS_TYPE,
+	UC_BRACELETS_TIME,
+	UC_SETTING[SETTING_STR_SIZE],
+	UC_LIMITS[LIMITS_STR_SIZE],
+	UC_GR_BLOCK,
+	UC_GR_BLOCK_ADMIN[MAX_NAME_LENGTH],
+	UC_QUESTS[DATA_QUEST_CACHE],
+	UC_DISCONECT_TIME
+};
+
+// Bans Data
+
+new Array:g_aBansCache;
+new g_iBansCacheSize;
+
+enum _:DATA_BANS_CACHE // szAuth, szName, szAdmin, szReason, b_time, b_len
+{
+	BAN_PLAYER_ID [MAX_AUTHID_LENGTH],
+	BAN_PLAYER_NICK [MAX_NAME_LENGTH * 2],
+	BAN_ADMIN_NICK [MAX_NAME_LENGTH * 2],
+	BAN_REASON [MAX_REASON_LENGTH],
+	BAN_CREATED,
+	BAN_LENGTH,
+	
+	BAN_PLAYER_IP[MAX_USERIP_LENGTH],
+	BAN_DISCONECT_TIME
+};
