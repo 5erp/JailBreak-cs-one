@@ -79,7 +79,8 @@ load_user_data_cache(id)
 		{
 			g_iTimeBlockGrEnd[id] = aDataUserCache[UC_GR_BLOCK];
 			SetBit(g_iBitUserGrBlock, id);
-			g_GrAdmin_Blocker[id] = aDataUserCache[UC_GR_BLOCK_ADMIN];
+		//	g_GrAdmin_Blocker[id] = aDataUserCache[UC_GR_BLOCK_ADMIN];
+			copy(g_GrAdmin_Blocker[id], charsmax(g_GrAdmin_Blocker[]), aDataUserCache[UC_GR_BLOCK_ADMIN]);
 		}
 
 		for (new i; i < MAX_EXECUTE_QUEST; i++)
