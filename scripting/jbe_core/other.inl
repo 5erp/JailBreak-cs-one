@@ -660,10 +660,12 @@ stock fix_venicle_spawn()
 	
 reload_user_voice(id) // при смерти / респавне / входе юзаем
 {
-	new iBlock = cmsgag_is_user_blocked(id);
+//	new iBlock = cmsgag_is_user_blocked(id);
 
 	if ((((g_iUserTeam[id] == TEAM_GUARD || IsSetBit(g_iBitUserVoice, id) || g_iLastPnId == id) && IsSetBit(g_iBitUserAlive, id))
-	|| IsSetBit(g_iBitUserAdmin, id)) && (iBlock != 0 && iBlock != 2))
+//	|| IsSetBit(g_iBitUserAdmin, id)) && (iBlock != 0 && iBlock != 2))
+	|| IsSetBit(g_iBitUserAdmin, id)))
+
 		VTC_UnmuteClient(id);
 	else
 		VTC_MuteClient(id);

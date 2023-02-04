@@ -2,7 +2,7 @@ new PLUGIN_VERSION[32] = "2.36.7";
 // крупные изменения / новый функционал / мелкие правки&доработки
 
 //#define DEVELOPER_OPTIONS		// комминтим перед тем как залить на серв :D
-//#define SQL_DEBUG				// отладка работы sql
+#define SQL_DEBUG				// отладка работы sql
 #define ENABLE_QUESTS			// включение квестов (если офнуть, то редачить работу с БД)
 #define ENABLE_BRACELETS		// включение наручников (если офнуть, то редачить работу с БД)
 #define ENABLE_IP_PASS_SAVE		// сохранение ip+pass (если офнуть, править работу с БД) (делалось для теста, убрать)
@@ -11,9 +11,17 @@ new PLUGIN_VERSION[32] = "2.36.7";
 #pragma tabsize 1				// Табуляция
 #define MEMBER_UNSAFE		 	// If you want to use s/get_member unsafe version
 
+#define CMSOFF 
+
+#if !defined CMSOFF
 native cmsapi_is_user_member(id);
 native cmsapi_get_user_services(id, z[], fl[], i);
 native cmsapi_is_admin_active(id, szReason[], iLen, const srvName[]="");
+#else
+cmsapi_is_user_member(id) return 0;
+cmsapi_get_user_services(id, z[], fl[], i) return 0;
+cmsapi_is_admin_active(id, szReason[], iLen, const srvName[]="") return 0;
+#endif
 forward OnAPISendChatPrefix(id, prefix[], type);
 forward OnAPIMemberConnected(id, memberId, memberName[]);
 forward OnAPIAdminConnected(id, const szName[], adminID, Flags);

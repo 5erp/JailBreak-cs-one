@@ -188,3 +188,76 @@ CREATE TABLE `jbe_save` (
   `month_time` int(11) DEFAULT '0',
   `month_last` int(11) DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+--
+-- Индексы сохранённых таблиц
+--
+
+--
+-- Индексы таблицы `amx_amxadmins`
+--
+ALTER TABLE `amx_amxadmins`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `steamid` (`steamid`);
+
+--
+-- Индексы таблицы `amx_bans`
+--
+ALTER TABLE `amx_bans`
+  ADD PRIMARY KEY (`bid`),
+  ADD KEY `player_id` (`player_id`);
+
+--
+-- Индексы таблицы `amx_serverinfo`
+--
+ALTER TABLE `amx_serverinfo`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `jbe_grblocks`
+--
+ALTER TABLE `jbe_grblocks`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `jbe_quests`
+--
+ALTER TABLE `jbe_quests`
+  ADD UNIQUE KEY `save_id` (`save_id`);
+
+--
+-- Индексы таблицы `jbe_save`
+--
+ALTER TABLE `jbe_save`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT для сохранённых таблиц
+--
+
+--
+-- AUTO_INCREMENT для таблицы `amx_amxadmins`
+--
+ALTER TABLE `amx_amxadmins`
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+--
+-- AUTO_INCREMENT для таблицы `amx_bans`
+--
+ALTER TABLE `amx_bans`
+  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+--
+-- AUTO_INCREMENT для таблицы `amx_serverinfo`
+--
+ALTER TABLE `amx_serverinfo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+--
+-- AUTO_INCREMENT для таблицы `jbe_grblocks`
+--
+ALTER TABLE `jbe_grblocks`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+--
+-- AUTO_INCREMENT для таблицы `jbe_save`
+--
+ALTER TABLE `jbe_save`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
